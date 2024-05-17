@@ -11,10 +11,13 @@ const users = []
 const { Client } = require('pg');
 
 // Create a new PostgreSQL client
+
+require('dotenv').config();
+
 const client = new Client({
     host: 'localhost',
     user: 'postgres',
-    password: 'firedragon123',
+    password: process.env.DB_PASSWORD,
     database: 'users',
     port: 5432,
 });
